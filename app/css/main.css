@@ -1,4 +1,15 @@
 body {
-  background: lightgreen;
+  background: white;
 }
 
+div.main-body {
+  margin: 2% 10% 2% 10%;
+}
+
+img.img-responsive {
+  margin: 20px 20px 20px 20px;
+}
+
+p {
+  text-align: justify;
+}
