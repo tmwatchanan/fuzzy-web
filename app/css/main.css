@@ -13,3 +13,22 @@ img.img-responsive {
 p {
   text-align: justify;
 }
+
+.lab-center {
+    /* margin: auto;
+    display: table; */
+    text-align: center;
+}
+
+div.center-img{
+  display:inline-block;
+  margin:5px 20px;
+  padding:5px;
+  
+  border:1px solid #CCC;
+}
+
+img.lab-img {
+  width: 250px;
+  height: auto;
+}
