@@ -25,7 +25,7 @@ Vue.component('my-navbar', {
         <li><a href="#">Lab</a></li>
         <li><a href="#">Assignment</a></li>
         <li><a href="#">About Us</a></li>
-        <li id="fake-nav"><a href="#login" style="padding:0px"><img src=${require('images/pure-icon-profile.png')} alt="Profile" style="width:40px; height:auto; margin: 5px"></a></li>
+        <li id="fake-nav"><a href="#login" style="padding:0px"><img src=${require('./images/pure-icon-profile.png')} alt="Profile" style="width:40px; height:auto; margin: 5px"></a></li>
       </ul>
     </div>
   </nav>

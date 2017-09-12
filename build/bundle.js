@@ -627,7 +627,7 @@ module.exports = __webpack_require__.p + "e18bbf611f2a2e43afc071aa2f4e1512.ttf";
 /* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "/app/images/glyphicons-halflings-regular.svg";
+module.exports = __webpack_require__.p + "app/images/glyphicons-halflings-regular.svg";
 
 /***/ }),
 /* 10 */
@@ -812,7 +812,7 @@ module.exports = g;
 /* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "/app/images/pure-icon-profile.png";
+module.exports = __webpack_require__.p + "app/images/pure-icon-profile.png";
 
 /***/ })
 /******/ ]);
