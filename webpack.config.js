@@ -28,7 +28,7 @@ module.exports = {
       },
       {
         test: /\.(jpe?g|png|gif|svg)$/i,
-        loader: "file-loader?name=/app/images/[name].[ext]"
+        loader: "file-loader?name=app/images/[name].[ext]"
       },
       {
         test: /\.(woff|woff2)(\?v=\d+\.\d+\.\d+)?$/,
