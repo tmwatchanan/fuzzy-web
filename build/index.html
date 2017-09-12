@@ -2,33 +2,80 @@
 <html>
 
 <head>
-  <title>My First Vue App </title>
+    <title>My First Vue App </title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 
 <body>
 
-  <div id="my-navbar">
-    <!-- <p>{{message}}</p> -->
-      <my-navbar></my-navbar>
-  </div>
+    <div id="my-navbar">
+        <!-- <p>{{message}}</p> -->
+        <my-navbar></my-navbar>
+    </div>
+    <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+        <div class="modal-dialog">
+            <div class="loginmodal-container">
+                <h1>Login to Your Account</h1><br>
+                <form role="form" data-toggle="validator">
+                    <div class="form-group">
+                        <label for="InputUsername" class="control-label">Username</label>
+                        <input type="text" class="form-control" id="Username" placeholder="Username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="InputPassword" class="control-label">Password</label>
+                        <input type="password" class="form-control" id="Password1" placeholder="Password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Login</button>
+                </form>
 
-  <div id="my-button">
-      <!-- <p>{{message}}</p> -->
-    <my-button></my-button>
-  </div>
-
-  <div class="navbar navbar-default navbar-fixed-bottom">
-    <div class="container">
-      <p class="navbar-text pull-left">© 2017 - Fuzzy Web
-        <a href="#" target="_blank">CPE405</a>
-      </p>
-
-      <!-- <a href="#" class="navbar-btn btn-danger btn pull-right">
-        <span class="glyphicon glyphicon-star"></span>  Subscribe on YouTube</a> -->
+                <div class="login-help">
+                    <a href="#" data-toggle="modal" data-target="#register-modal" data-dismiss="modal">Register?</a>
+                </div>
+            </div>
+        </div>
     </div>
 
-  </div>
-  <script src="./bundle.js"></script>
+    <div class="modal fade" id="register-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
+        style="display: none;">
+        <div class="modal-dialog">
+            <div class="loginmodal-container">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h1>Register</h1><br>
+                <form data-toggle="validator" role="form">
+                    <div class="form-group">
+                        <label for="InputUsername" class="control-label">Username</label>
+                        <input type="text" class="form-control" id="RegisterUsername" placeholder="Username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="RegisterPassword" class="control-label">Password</label>
+                        <input type="password" class="form-control" id="RegisterPassword" placeholder="Password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="ConfirmPassword" class="control-label">Confirm Password</label>
+                        <input type="password" class="form-control" id="ConfirmPassword" placeholder="Confirm Password" data-match="#RegisterPassword"
+                            data-match-error="Password Doesn't match!" required>
+                        <div class="help-block with-errors"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="RegisterEmail" class="control-label">Email address</label>
+                        <input type="email" class="form-control" id="InputEmail" placeholder="Enter email" data-error="email address is invalid"
+                            required>
+                        <div class="help-block with-errors"></div>
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="text-align: center;">Register</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <div id="my-footer">
+        <my-footer></my-footer>
+    </div>
+    <script src="./bundle.js"></script>
 </body>
 
 </html>
