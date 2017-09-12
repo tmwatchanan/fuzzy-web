@@ -27,12 +27,8 @@ module.exports = {
         loaders: ['style-loader', 'css-loader']
       },
       {
-        test: /\.png$/,
-        loader: "url-loader?limit=100000"
-      },
-      {
-        test: /\.jpg$/,
-        loader: "file-loader"
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        loader: "file-loader?name=/app/images/[name].[ext]"
       },
       {
         test: /\.(woff|woff2)(\?v=\d+\.\d+\.\d+)?$/,
