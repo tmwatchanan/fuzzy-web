@@ -1,6 +1,7 @@
 require('bootstrap/dist/css/bootstrap.min.css');
-require('./css/main.css');
 require('font-awesome/css/font-awesome.min.css');
+require('bootstrap-validator/dist/validator.min.js');
+require('./css/main.css');
 
 import Vue from 'vue';
 
@@ -27,7 +28,11 @@ Vue.component('my-navbar', {
         <li><a href="./lab.html">Lab</a></li>
         <li><a href="./assignment.html">Assignment</a></li>
         <li><a href="#">About Us</a></li>
-        <li id="fake-nav"><a href="#login" style="padding:0px"><img src=${require('./images/pure-icon-profile.png')} alt="Profile" style="width:40px; height:auto; margin: 5px"></a></li>
+        <li id="fake-nav">
+         <a href="#login" style="padding:0px" data-toggle="modal" data-target="#login-modal">
+          <img src=${require('./images/pure-icon-profile.png')} alt="Profile" style="width:40px; height:auto; margin: 5px">
+         </a>
+        </li>
       </ul>
     </div>
   </nav>
@@ -169,4 +174,69 @@ Vue.component('assignment-table', {
 
 new Vue({
   el: '#assignment-table'
+});
+
+Vue.component('modal-authen', {
+  template: `
+    <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+      <div class="modal-dialog">
+        <div class="loginmodal-container">
+          <h1>Login to Your Account</h1><br>
+          <form role="form" data-toggle="validator">
+            <div class="form-group">
+              <label for="InputUsername" class="control-label">Username</label>
+              <input type="text" class="form-control" id="Username" placeholder="Username" required>
+            </div>
+            <div class="form-group">
+              <label for="InputPassword" class="control-label">Password</label>
+              <input type="password" class="form-control" id="Password1" placeholder="Password" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Login</button>
+          </form>
+
+          <div class="login-help">
+            <a href="#" data-toggle="modal" data-target="#register-modal" data-dismiss="modal">Register?</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="register-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
+      style="display: none;">
+      <div class="modal-dialog">
+        <div class="loginmodal-container">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h1>Register</h1><br>
+          <form data-toggle="validator" role="form">
+            <div class="form-group">
+              <label for="InputUsername" class="control-label">Username</label>
+              <input type="text" class="form-control" id="RegisterUsername" placeholder="Username" required>
+            </div>
+            <div class="form-group">
+              <label for="RegisterPassword" class="control-label">Password</label>
+              <input type="password" class="form-control" id="RegisterPassword" placeholder="Password" required>
+            </div>
+            <div class="form-group">
+              <label for="ConfirmPassword" class="control-label">Confirm Password</label>
+              <input type="password" class="form-control" id="ConfirmPassword" placeholder="Confirm Password" data-match="#RegisterPassword"
+                data-match-error="Password Doesn't match!" required>
+              <div class="help-block with-errors"></div>
+            </div>
+            <div class="form-group">
+              <label for="RegisterEmail" class="control-label">Email address</label>
+              <input type="email" class="form-control" id="InputEmail" placeholder="Enter email" data-error="email address is invalid"
+                required>
+              <div class="help-block with-errors"></div>
+              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <button type="submit" class="btn btn-primary" style="text-align: center;">Register</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  `
+});
+
+new Vue({
+  el: '#modal-authen'
 });
