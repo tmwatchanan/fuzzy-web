@@ -7,13 +7,6 @@ Vue.component('my-button', {
 })
 
 new Vue({
-<<<<<<< HEAD
-  el: '#app',
-  data: {
-    message: "Hello There"
-  }
-});
-=======
   el: '#my-button',
   data: {
     // message: "Hello Button"
@@ -30,4 +23,3 @@ new Vue({
     // message: "Hello Navbar"
   }
 });
->>>>>>> 67e0714fa59a480f750ba4585a8af833d9ccdf59
